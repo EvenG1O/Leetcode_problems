@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <iostream>
 
+
 using namespace std;
 
 struct TreeNode {
@@ -16,6 +17,8 @@ struct TreeNode {
 class Solution {
 
 public:
+  int maxDiameter = 0;
+
   int maxDepth(TreeNode *root) {
 
     if (root == nullptr)
@@ -24,8 +27,17 @@ public:
     int l = maxDepth(root->left);
     int r = maxDepth(root->right);
 
-    return max(l + 1, r + 1);
-  };
+    maxDiameter = max(maxDiameter, l + r);
+
+    return max(l, r) + 1;
+  }
+
+  int diamaterOFBinaryTree(TreeNode *root) {
+
+    maxDepth(root);
+
+    return maxDiameter;
+  }
 
   TreeNode *PrintTree(TreeNode *root) {
     if (root == nullptr)
@@ -54,13 +66,9 @@ int main() {
 
   root->left = two;
 
-  root->right = three;
-
-  three->right = four;
-
   temp.PrintTree(root);
 
-  int ans = temp.maxDepth(root);
+  int ans = temp.diamaterOFBinaryTree(root);
 
   cout << ans;
 
