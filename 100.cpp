@@ -1,6 +1,3 @@
-#include <algorithm>
-#include <cstddef>
-#include <cstdlib>
 #include <iostream>
 #include <queue>
 
@@ -23,6 +20,7 @@ public:
 
   bool isSameTree(TreeNode *p, TreeNode *q) {
 
+    if(!q && !p) return true;
     if (!q || !p)
       return false;
 
