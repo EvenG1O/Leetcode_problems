@@ -18,42 +18,31 @@ struct TreeNode {
 class Solution {
 
 public:
+  int numss(TreeNode *root) {
 
-    int numss(TreeNode *root){
-        
-        if(root == nullptr) return 0;
+    if (root == nullptr)
+      return 0;
 
-        int left = numss(root->left);
-        int right = numss(root->right);
+    int left = numss(root->left);
+    int right = numss(root->right);
 
-        int balance = abs(left-right);
-        if(balance > 1 || left == -1 || right == -1){
-            return -1;
-        }
-
-        return 1 + max(left,right);
-
-
-
-
+    int balance = abs(left - right);
+    if (balance > 1 || left == -1 || right == -1) {
+      return -1;
     }
 
+    return 1 + max(left, right);
+  }
 
+  bool isBalanced(TreeNode *root) {
+    if (root == nullptr)
+      return true;
 
-    bool isBalanced(TreeNode *root)
-    {
-        if(root == nullptr) return true;
-        
-        int temp = numss(root);
-        if(temp == -1) return false;
-        return  true;
-        
-
-
-
-
-
-    }
+    int temp = numss(root);
+    if (temp == -1)
+      return false;
+    return true;
+  }
 
   TreeNode *PrintTree(TreeNode *root) {
     if (root == nullptr)
@@ -84,16 +73,12 @@ int main() {
 
   root->right = three;
 
-
   temp.PrintTree(root);
-
 
   bool ans = temp.isBalanced(root);
 
-  if(ans) cout<<"working";
-
-  
-
+  if (ans)
+    cout << "working";
 
   return 0;
 }
