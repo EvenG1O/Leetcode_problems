@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int minTime(int mid, vector<int> &piles) {
+long long minTime(int mid, vector<int> &piles) {
   long long  amount{};
 
   for (int x : piles) {
