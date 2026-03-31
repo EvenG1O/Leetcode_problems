@@ -17,31 +17,34 @@ struct TreeNode {
 class Solution {
 
 public:
-  vector<int> rightSideView(TreeNode *root) {
+  int goodNode(TreeNode *root, int maxVal) {
 
-    queue<TreeNode *> q;
-    vector<int> ans;
     if (!root)
-      return ans;
+      return maxVal;
 
-    q.push(root);
+    int res{};
 
-    while (!q.empty()) {
+    if (root->val >= maxVal)
+      res += 1;
 
-      int size = q.size();
-      for (int i{}; i < size; i++) {
-        if (q.front()->left)
-          q.push(q.front()->left);
-        if (q.front()->right)
-          q.push(q.front()->right);
+    maxVal = max(maxVal,root->val);
+    if (root->left)
+      res += goodNode(root->left, maxVal);
+    if (root->right)
+      res += goodNode(root->right, maxVal);
 
-        if (i == size - 1)
-          ans.push_back(q.front()->val);
-        q.pop();
-      }
-    }
+    return res;
+  }
 
-    return ans;
+  int goodNodes(TreeNode *root) {
+
+    int ans = goodNode(root, root->val);
+
+    return  ans;
+
+
+
+
   }
 
   TreeNode *PrintTree(TreeNode *root) {
@@ -79,11 +82,11 @@ int main() {
 
   four->left = five;
 
-  vector<int> ans = temp.rightSideView(root);
+  //temp.PrintTree(root);
 
-  for (int x : ans) {
-    cout << x << endl;
-  }
+  int ans = temp.goodNodes(root);
+cout<<ans;
+
 
   return 0;
 }
