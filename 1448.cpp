@@ -27,7 +27,7 @@ public:
     if (root->val >= maxVal)
       res += 1;
 
-    maxVal = max(maxVal,root->val);
+    maxVal = max(maxVal, root->val);
     if (root->left)
       res += goodNode(root->left, maxVal);
     if (root->right)
@@ -40,11 +40,7 @@ public:
 
     int ans = goodNode(root, root->val);
 
-    return  ans;
-
-
-
-
+    return ans;
   }
 
   TreeNode *PrintTree(TreeNode *root) {
@@ -82,11 +78,10 @@ int main() {
 
   four->left = five;
 
-  //temp.PrintTree(root);
+  // temp.PrintTree(root);
 
   int ans = temp.goodNodes(root);
-cout<<ans;
-
+  cout << ans;
 
   return 0;
 }
