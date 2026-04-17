@@ -6,7 +6,7 @@ using namespace std;
 
 
 
-class subset{
+class Solution{
   public:
 vector<vector<int>> ans;
 int total = 0;
@@ -44,7 +44,7 @@ vector<vector<int>> combinationSum(vector<int> &candidates, int target) {
 
 int main() {
 
-  subset s;
+  Solution s;
 
   vector<int> t = {2, 3, 6, 7};
 
