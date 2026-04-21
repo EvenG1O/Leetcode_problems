@@ -17,40 +17,28 @@ public:
       if (se.count(currentCandidates))
         return;
 
-
       ans.push_back(currentCandidates);
       se.insert(currentCandidates);
       return;
     }
 
-    
-
     if (currentSum > target || index >= candidates.size())
       return;
 
-    for(int i = index; i < candidates.size(); i++)
-    {
+    for (int i = index; i < candidates.size(); i++) {
 
-      if (i > index && candidates[i] == candidates[i - 1] ) {
+      if (i > index && candidates[i] == candidates[i - 1]) {
         continue;
       }
 
-      if(currentSum + candidates[i] > target) break;
-
-
+      if (currentSum + candidates[i] > target)
+        break;
 
       currentCandidates.push_back(candidates[i]);
-      dfs(candidates, currentCandidates, i + 1, target, currentSum + candidates[i]);
+      dfs(candidates, currentCandidates, i + 1, target,
+          currentSum + candidates[i]);
       currentCandidates.pop_back();
-
-
-
-
-
     }
-
-
-
   }
 
   vector<vector<int>> combinationSum2(vector<int> &candidates, int target) {
