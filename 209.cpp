@@ -33,7 +33,7 @@ int main() {
 
   Solution s;
 
-  vector<int> nums = {1,1,1,1,1,1,1,1};
+  vector<int> nums = {1, 1, 1, 1, 1, 1, 1, 1};
 
   int ans = s.minSubArrayLen(11, nums);
 
