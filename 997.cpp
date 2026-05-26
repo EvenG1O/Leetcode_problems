@@ -20,7 +20,7 @@ public:
       inc[trust[i][1]]++;
     }
 
-    for (int i =1; i <= n; i++) {
+    for (int i = 1; i <= n; i++) {
 
       if (inc[i] == n - 1 && out[i] == 0)
         return i;
@@ -39,7 +39,7 @@ int main() {
 
   int ans = s.findJudge(n, trust);
 
-  cout << ans <<endl;
+  cout << ans << endl;
 
   return 0;
 }
