@@ -24,13 +24,13 @@ public:
 
 int main() {
 
-    Solution s;
+  Solution s;
 
   vector<int> t = {10, 15, 20};
 
-  int ans =  s.minCostClimbingStairs(t);
+  int ans = s.minCostClimbingStairs(t);
 
-  cout<<ans<<endl;
+  cout << ans << endl;
 
   return 0;
 }
