@@ -1,7 +1,4 @@
-#include <cstdlib>
-#include <iostream>
-#include <string>
-#include <unordered_map>
+
 #include <vector>
 
 using namespace std;
@@ -32,7 +29,7 @@ public:
       currentIndex--;
       r--;
     }
-
+  }
 };
 
 int main() {
