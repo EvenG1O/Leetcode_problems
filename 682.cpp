@@ -21,7 +21,6 @@ public:
       if (operations[i].size() > 1 || isdigit(operations[i][0])) {
         s.push(stoi(operations[i]));
 
-
       } else {
         if (operations[i][0] == 'C') {
 
@@ -35,7 +34,6 @@ public:
           two = s.top();
           s.push(one);
           s.push(one + two);
-
         }
       }
     }

@@ -11,8 +11,7 @@ public:
 
   unordered_map<int, vector<int>> m;
 
-  bool dfs(int courseNumber, const vector<vector<int>> &prerequesites,
-           set<int> &visitSet) {
+  bool dfs(int courseNumber, set<int> &visitSet) {
 
     if (s.count(courseNumber))
       return true;
@@ -23,7 +22,7 @@ public:
 
     for (int i : m[courseNumber]) {
 
-      if (dfs(i, prerequesites, visitSet) == false) {
+      if (dfs(i, visitSet) == false) {
         return false;
       } else {
         s.insert(i);
@@ -44,7 +43,7 @@ public:
 
     for (int i{}; i < numCourses; i++) {
       set<int> vis;
-      if (dfs(i, prerequesites, vis) == false)
+      if (dfs(i, vis) == false)
         return false;
     }
 
